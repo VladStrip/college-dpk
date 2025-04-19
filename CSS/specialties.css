@@ -1,0 +1,342 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #290c4f;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #211f99, #a8478d);
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+    .page-header h1 {
+        font-size: 36px;
+        margin: 0;
+        color: white;
+    }
+
+.specialties-section {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.specialty-block {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+    .specialty-block.left .block-image {
+        order: 1;
+    }
+
+    .specialty-block.left .block-content {
+        order: 2;
+    }
+
+    .specialty-block.right .block-image {
+        order: 2;
+    }
+
+    .specialty-block.right .block-content {
+        order: 1;
+    }
+
+.block-image img {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glow {
+    box-shadow: 0 0 25px #ab591f, 0 0 40px rgba(168, 71, 141, 0.5);
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px #ab591f;
+    }
+
+    50% {
+        box-shadow: 0 0 25px #ab591f, 0 0 40px rgba(168, 71, 141, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 10px #ab591f;
+    }
+}
+
+.block-content {
+    flex: 1 1 500px;
+}
+
+    .block-content h2 {
+        font-size: 24px;
+        color: #ffeeba;
+        margin-bottom: 20px;
+    }
+
+.specialty-card {
+    background: #211f99;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+    .specialty-card:hover {
+        transform: translateY(-5px);
+        background: #3b35c5;
+    }
+
+    .specialty-card h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        color: #ff9800;
+    }
+
+    .specialty-card p {
+        margin: 0;
+        font-size: 15px;
+        color: white;
+    }
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+    .specialty-block {
+        flex-direction: column;
+        text-align: center;
+    }
+
+        .specialty-block .block-image {
+            order: 1 !important;
+        }
+
+        .specialty-block .block-content {
+            order: 2 !important;
+        }
+
+    .block-image img {
+        max-width: 260px;
+    }
+
+    .block-content h2 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .specialty-card h3 {
+        font-size: 16px;
+    }
+
+    .specialty-card p {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Шапка */
+header {
+    background: linear-gradient(135deg, #211f99, #a8478d);
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 70px; /* Фиксированная высота */
+    display: flex;
+    align-items: center; /* Центрируем элементы */
+    z-index: 1000;
+}
+
+/* Логотип */
+.logo {
+    position: fixed;
+    top: 0px;
+    left: 10px;
+    z-index: 1000;
+}
+
+    .logo img {
+        width: 130px;
+        height: auto;
+        transition: transform 0.3s ease;
+        border: 2px solid var(--highlight);
+        border - radius: 10px;
+    }
+
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    header {
+        height: 45px; /* Чуть меньше на телефонах */
+        padding: 10px 0;
+    }
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+    box - shadow: 0 0 15px var(--highlight);
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 600px) {
+    .logo img {
+        position: fixed;
+        top: 7px;
+        left: 10px;
+        z-index: 1000;
+        width: 75px;
+    }
+}
+
+
+
+/* Кнопка меню для мобильных */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+/* Навигация */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+    nav ul li {
+        position: relative;
+    }
+
+        /* Стилизация пунктов меню */
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 20px;
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+            /* Эффект при наведении */
+            nav ul li a:hover {
+                background: rgba(255, 255, 255, 0.2);
+                color: #ffffcc;
+                border-radius: 5px;
+            }
+
+/* Выпадающее меню */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #ddd;
+    }
+
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+    .dropdown-menu a {
+        color: #211f99;
+        padding: 10px 15px;
+        display: block;
+        transition: background 0.3s, color 0.3s;
+    }
+
+        /* Эффект при наведении на выпадающее меню */
+        .dropdown-menu a:hover {
+            background: #211f99;
+            color: white;
+        }
+
+/* Показывать подменю при наведении */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Адаптивность: меню сворачивается в кнопку */
+@media (max-width: 1490px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(135deg, #290c4f, #290c4f);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+        nav ul li a {
+            padding: 12px 15px;
+        }
+}
+
+
+
+
