@@ -1,0 +1,455 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #1c1c1c;
+    color: #eee;
+}
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+
+.teacher-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar (Левый блок) */
+.teacher-sidebar {
+    background-color: #2a2a2a;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.profile-box {
+    text-align: center;
+    background-color: #333;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+    .profile-box h2 {
+        margin: 0;
+        font-size: 22px;
+        color: #ffffff;
+    }
+
+    .profile-box p {
+        color: #888;
+        margin-top: 8px;
+    }
+
+.subject-tabs h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.subject-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+    .subject-btn:hover,
+    .subject-btn.active {
+        background-color: #666;
+    }
+
+/* Main */
+.teacher-main {
+    flex: 1;
+    padding: 30px;
+}
+
+.group-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.group-tab {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #383838;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    .group-tab:hover,
+    .group-tab.active {
+        background-color: #5a5a5a;
+    }
+
+.subject-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.placeholder {
+    font-style: italic;
+    color: #999;
+}
+
+/* Кнопка "Загрузить материал" */
+.upload-toggle-btn {
+    background-color: #4a4a4a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .upload-toggle-btn:hover {
+        background-color: #666;
+    }
+
+/* Форма загрузки */
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #2e2e2e;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+    .upload-form label {
+        color: #ccc;
+        font-size: 14px;
+    }
+
+    .upload-form input[type="text"],
+    .upload-form input[type="number"],
+    .upload-form input[type="file"] {
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background: #444;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .upload-form button {
+        background-color: #5a5a5a;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        .upload-form button:hover {
+            background-color: #777;
+        }
+
+/* Блок материалов */
+.materials-list {
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+    .materials-list h3 {
+        margin-top: 0;
+        color: #ddd;
+    }
+
+    .materials-list ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .materials-list li {
+        background-color: #333;
+        margin-bottom: 10px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        color: #f0f0f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+/* Кнопка "Выйти" */
+.logout-btn {
+    background-color: #444;
+    padding: 10px;
+    margin-top: auto;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .logout-btn:hover {
+        background-color: #666;
+    }
+
+/* Скрытые элементы */
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Кнопка "Загрузить материал" */
+.upload-toggle-btn {
+    background-color: #4a4a4a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .upload-toggle-btn:hover {
+        background-color: #666;
+    }
+
+/* Форма загрузки */
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #2e2e2e;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+    .upload-form label {
+        color: #ccc;
+        font-size: 14px;
+    }
+
+    .upload-form input[type="text"],
+    .upload-form input[type="number"],
+    .upload-form input[type="file"] {
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background: #444;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .upload-form button {
+        background-color: #5a5a5a;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        .upload-form button:hover {
+            background-color: #777;
+        }
+
+/* Список загруженных материалов */
+.materials-list {
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+    .materials-list h3 {
+        margin-top: 0;
+        color: #ddd;
+    }
+
+    .materials-list ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .materials-list li {
+        background-color: #333;
+        margin-bottom: 10px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        color: #f0f0f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .materials-list a {
+        color: #7dd3fc;
+        text-decoration: underline;
+        margin-right: 10px;
+    }
+
+    .materials-list button {
+        background: transparent;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        color: #fff;
+        transition: transform 0.2s ease;
+    }
+
+        .materials-list button:hover {
+            transform: scale(1.1);
+        }
+
+/* Скрытие формы */
+.hidden {
+    display: none;
+}
+
+/* Кнопка выхода */
+.logout-btn {
+    background-color: #444;
+    padding: 10px;
+    margin-top: auto;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .logout-btn:hover {
+        background-color: #666;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.materials-list li {
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
+.materials-list a {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
+
+@media (max-width: 900px) {
+    .teacher-wrapper {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100%;
+    }
+
+    .teacher-sidebar {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0;
+        padding: 24px 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .teacher-main {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .subject-tabs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .subject-btn {
+        width: 100%;
+        padding: 14px;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 12px;
+        box-sizing: border-box;
+        word-break: break-word;
+    }
+
+    .logout-btn {
+        width: 100%;
+        padding: 14px;
+        margin-top: 20px;
+    }
+}
